@@ -1,0 +1,30 @@
+﻿@model TravelTripProject.Models.Entity.CommentStatement
+
+@{
+    ViewBag.Title = "GetCommentById";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+@using (Html.BeginForm("UpdateComment", "Admin", FormMethod.Post))
+{
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.Id)
+    @Html.TextBoxFor(x => x.Id, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.UserName)
+    @Html.TextBoxFor(x => x.UserName, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Email)
+    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Comment)
+    @Html.TextAreaFor(x => x.Comment, 15, 1, new { @class = "form-control" })
+    <div style="visibility: hidden;">
+        @Html.LabelFor(x => x.BlogId)
+        @Html.TextBoxFor(x => x.BlogId, new { @class = "form-control" })
+    </div>
+        <button class="btn btn-primary">Güncelle</button>
+</form>
+}
+
